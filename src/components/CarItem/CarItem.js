@@ -26,7 +26,7 @@ const CarItem = () => {
         />
         <Button
           text={'Existing Inventory'}
-          type={'secundary'}
+          type={'secondary'}
           onPress={() => {
             console.warn('Existing Inventory');
           }}
