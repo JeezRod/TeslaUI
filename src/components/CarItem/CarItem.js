@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, ImageBackground} from 'react-native';
-import styles from './CarItem.style';
+import styles from './CarItem.styled';
+import Button from '../Button/Button';
 
 const CarItem = () => {
   return (
@@ -16,6 +17,20 @@ const CarItem = () => {
             Order Online for Touchless Delivery
           </Text>
         </View>
+        <Button
+          text={'Custom Order'}
+          type={'primary'}
+          onPress={() => {
+            console.warn('Custom order');
+          }}
+        />
+        <Button
+          text={'Existing Inventory'}
+          type={'secundary'}
+          onPress={() => {
+            console.warn('Existing Inventory');
+          }}
+        />
       </View>
     </>
   );
