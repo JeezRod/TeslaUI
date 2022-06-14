@@ -8,13 +8,12 @@
 
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import CarItem from './src/components/CarItem/CarItem';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <View>
-        <Text>Hello World!</Text>
-      </View>
+      <CarItem />
     </View>
   );
 };
