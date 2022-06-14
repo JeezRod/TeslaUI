@@ -29,7 +29,6 @@ build/
 local.properties
 *.iml
 *.hprof
-
 # node.js
 #
 node_modules/
