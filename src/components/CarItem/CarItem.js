@@ -1,36 +1,35 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground, Linking} from 'react-native';
 import styles from './CarItem.styled';
 import Button from '../Button/Button';
 
-const CarItem = () => {
+const CarItem = props => {
+  const {name, tagLine, tagLineDO, DOURL, image, button} = props;
+  // Creating the buttons from the array passed through the props.
+  const buttons = button.map((btn, index) => (
+    <Button
+      text={btn.text}
+      key={index + name} //Adding the name to avoid key duplicates with different elements
+      type={index === 0 ? 'primary' : 'secondary'}
+      onPress={() => Linking.openURL(btn.url)}
+    />
+  ));
   return (
     <>
-      <ImageBackground
-        source={require('../../../assets/images/Model3.jpeg')}
-        style={styles.bckImg}
-      />
+      <ImageBackground source={image} style={styles.bckImg} />
       <View style={styles.carCard}>
         <View style={styles.cardHeader}>
-          <Text style={styles.carModel}>Model 3</Text>
+          <Text style={styles.carModel}>{name}</Text>
           <Text style={styles.tagLine}>
-            Order Online for Touchless Delivery
+            {tagLine}&nbsp;{/*Adding empty space*/}
+            <Text
+              style={styles.tagLineDO}
+              onPress={() => Linking.openURL(DOURL)}>
+              {tagLineDO}
+            </Text>
           </Text>
         </View>
-        <Button
-          text={'Custom Order'}
-          type={'primary'}
-          onPress={() => {
-            console.warn('Custom order');
-          }}
-        />
-        <Button
-          text={'Existing Inventory'}
-          type={'secondary'}
-          onPress={() => {
-            console.warn('Existing Inventory');
-          }}
-        />
+        <View style={styles.btnContainer}>{buttons}</View>
       </View>
     </>
   );
