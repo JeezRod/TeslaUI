@@ -8,13 +8,12 @@
 
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import ElementsList from './src/components/ElementsList/ElementsList';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <View>
-        <Text>Hello World!</Text>
-      </View>
+      <ElementsList />
     </View>
   );
 };
