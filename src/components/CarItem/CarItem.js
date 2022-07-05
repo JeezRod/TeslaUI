@@ -4,7 +4,7 @@ import styles from './CarItem.styled';
 import Button from '../Button/Button';
 
 const CarItem = props => {
-  const {name, tagLine, tagLineDO, DOURL, image, button} = props;
+  const {name, tagLine, tagLineDO, DOURL, image, button} = props.car;
   // Creating the buttons from the array passed through the props.
   const buttons = button.map((btn, index) => (
     <Button

@@ -1,9 +1,10 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 const styles = StyleSheet.create({
   carCard: {
     width: '100%',
-    height: '100%',
+    //Takes the height of the device
+    height: Dimensions.get('window').height,
     display: 'flex',
     justifyContent: 'space-between',
   },
